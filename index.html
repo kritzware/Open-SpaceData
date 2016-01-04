@@ -66,6 +66,8 @@
 
 <div class="container">
 
+<h1 align=center>Rover Photo Finder <small>BETA</small></h1>
+
 <h3>NASA Rover: </h3>
 <label class="radio-inline">
   <input type="radio" name="roverRadio" id="inlineRadio1" value="option1"> Curiosity
@@ -110,8 +112,13 @@
     </span>
 </div>
 
-<div style="margin-top: 20px;">
+<div style="margin-top: 20px; margin-bottom: 20px">
   <button type="button" class="btn btn-primary" id="submit" onClick="getData()">Find Photos</button>
+</div>
+
+<div class="alert alert-danger alert-dismissible" role="alert" style="width: 400px;">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Warning!</strong> Some requests may not be valid
 </div>
 
 </div>
@@ -146,6 +153,12 @@
       
   </div>
 </div>
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="container" style="margin-top: 15px; color: white;" align=center>
+    Created by <a href="http://www.twitter.com/louisbluhm" target="_blank">Louis Bluhm</a> || Data provided by <a href="http://www.nasa.gov" target="_blank">NASA</a> || Powered by <a href="https://api.nasa.gov/api.html#MarsPhotos" target="_blank">Rover API</a>
+  </div>
+</nav>
 
 </body>
 
