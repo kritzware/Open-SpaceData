@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.1/css/bootstrap-datepicker.min.css">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.1/js/bootstrap-datepicker.min.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   
   <script src="key.js"></script>
 	
@@ -23,6 +25,9 @@
   }
   h2 {
     margin-bottom: 30px;
+  }
+  #results {
+    visibility: hidden;
   }
   </style>
 
@@ -43,10 +48,17 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
+            <li class="active"><a href="#">Mars Rovers</a></li>
+<!--             <li><a href="#about">About</a></li>
             <li><a href="#contact">Documentation</a></li>
-            <li><a href="#random" id="rand">Random</a></li>
+            <li><a href="#random" id="rand">Random</a></li> -->
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://www.nasa.gov" target="_blank">Data provided by NASA</a></li>
+          <li class="brand">
+          <img style="width: 50px; height: 40px; margin-top: 5px;"
+             src="https://api.nasa.gov/images/logo.png">
+             </li>
           </ul>
         </div><!--/.nav-collapse --> 
       </div>
@@ -66,31 +78,36 @@
 </label>
 
 <h3>Camera type: </h3>
+<div id="cameras">
 <label class="radio-inline">
-  <input type="radio" name="cameraRadio" id="fhaz" value="option1"> FHAZ
+  <input type="radio" name="cameraRadio" id="fhaz" value="fhaz"> FHAZ
 </label>
 <label class="radio-inline">
-  <input type="radio" name="cameraRadio" id="navcam" value="option1"> NAVCAM
+  <input type="radio" name="cameraRadio" id="navcam" value="navcam"> NAVCAM
 </label>
 <label class="radio-inline">
-  <input type="radio" name="cameraRadio" id="mast" value="option1"> MAST
+  <input type="radio" name="cameraRadio" id="mast" value="mast"> MAST
 </label>
 <label class="radio-inline">
-  <input type="radio" name="cameraRadio" id="chemcam" value="option1"> CHEMCAM
+  <input type="radio" name="cameraRadio" id="chemcam" value="chemcam"> CHEMCAM
 </label>
 <label class="radio-inline">
-  <input type="radio" name="cameraRadio" id="mahli" value="option1"> MAHLI
+  <input type="radio" name="cameraRadio" id="mahli" value="mahli"> MAHLI
 </label>
 <label class="radio-inline">
-  <input type="radio" name="cameraRadio" id="mardi" value="option1"> MARDI
+  <input type="radio" name="cameraRadio" id="mardi" value="mardi"> MARDI
 </label>
 <label class="radio-inline">
-  <input type="radio" name="cameraRadio" id="rhaz" value="option1"> RHAZ
+  <input type="radio" name="cameraRadio" id="rhaz" value="rhaz"> RHAZ
 </label>
+</div>
 
 <h3>Choose date (Earth):</h3>
 <div class="input-group date" style="width: 250px;">
-  <input type="text" class="form-control"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+  <input type="text" class="form-control" id="earth-date" data-date-format="yyyy-mm-dd">
+    <span class="input-group-addon">
+      <i class="glyphicon glyphicon-th"></i>
+    </span>
 </div>
 
 <div style="margin-top: 20px;">
@@ -99,9 +116,7 @@
 
 </div>
 
-<!-- <div class="container">
-
-  <h2>Mars Curiosity Rover</h2>
+<div class="container" id="results" style="margin-top: 30px;">
   
   <div class = "row">
    
@@ -118,11 +133,11 @@
          
          <p>
             <a href = "#" class = "btn btn-primary" role = "button">
-               Share
+               Share <i class="fa fa-twitter"></i>
             </a> 
             
             <a href = "#" class = "btn btn-default" role = "button">
-               More Information
+               Enlarge
             </a>
          </p>
          
@@ -130,7 +145,7 @@
    </div>
       
   </div>
-</div> -->
+</div>
 
 </body>
 
