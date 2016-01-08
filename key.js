@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $('[data-toggle="tooltip"]').tooltip(); 
   $('.input-group.date').datepicker({
       format: "yyyy-mm-dd",
       todayBtn: "linked",
