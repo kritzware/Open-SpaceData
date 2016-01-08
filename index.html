@@ -64,93 +64,97 @@
       </div>
     </nav>
 
-<div class="container">
-
 <h1 align=center>Rover Photo Finder <small>BETA</small></h1>
 
-<h3>NASA Rover: </h3>
-<label class="radio-inline">
-  <input type="radio" name="roverRadio" id="inlineRadio1" value="option1"> Curiosity
-</label>
-<label class="radio-inline">
-  <input type="radio" name="roverRadio" id="inlineRadio1" value="option1" disabled="Currently not available"> Opportunity
-</label>
-<label class="radio-inline">
-  <input type="radio" name="roverRadio" id="inlineRadio1" value="option1" disabled="Currently not available"> Spirit
-</label>
+<div class="container">
+  <div class="row">
 
-<h3>Camera type: </h3>
-<div id="cameras">
-<label class="radio-inline">
-  <input type="radio" name="cameraRadio" id="fhaz" value="fhaz"> FHAZ
-</label>
-<label class="radio-inline">
-  <input type="radio" name="cameraRadio" id="navcam" value="navcam"> NAVCAM
-</label>
-<label class="radio-inline">
-  <input type="radio" name="cameraRadio" id="mast" value="mast"> MAST
-</label>
-<label class="radio-inline">
-  <input type="radio" name="cameraRadio" id="chemcam" value="chemcam"> CHEMCAM
-</label>
-<label class="radio-inline">
-  <input type="radio" name="cameraRadio" id="mahli" value="mahli"> MAHLI
-</label>
-<label class="radio-inline">
-  <input type="radio" name="cameraRadio" id="mardi" value="mardi"> MARDI
-</label>
-<label class="radio-inline">
-  <input type="radio" name="cameraRadio" id="rhaz" value="rhaz"> RHAZ
-</label>
-</div>
+    <div class="col-xs-7">
+    <h3>NASA Rover: </h3>
+    <label class="radio-inline">
+      <input type="radio" name="roverRadio" id="inlineRadio1" value="option1"> Curiosity
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="roverRadio" id="inlineRadio1" value="option1" disabled="Currently not available"> Opportunity
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="roverRadio" id="inlineRadio1" value="option1" disabled="Currently not available"> Spirit
+    </label>
 
-<h3>Choose date (Earth):</h3>
-<div class="input-group date" style="width: 250px;">
-  <input type="text" class="form-control" id="earth-date" data-date-format="yyyy-mm-dd">
-    <span class="input-group-addon">
-      <i class="glyphicon glyphicon-th"></i>
-    </span>
-</div>
+    <h3>Camera type: </h3>
+    <div id="cameras">
+    <label class="radio-inline">
+      <input type="radio" name="cameraRadio" id="fhaz" value="fhaz"> FHAZ
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="cameraRadio" id="navcam" value="navcam"> NAVCAM
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="cameraRadio" id="mast" value="mast"> MAST
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="cameraRadio" id="chemcam" value="chemcam"> CHEMCAM
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="cameraRadio" id="mahli" value="mahli"> MAHLI
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="cameraRadio" id="mardi" value="mardi"> MARDI
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="cameraRadio" id="rhaz" value="rhaz"> RHAZ
+    </label>
+    </div>
 
-<div style="margin-top: 20px; margin-bottom: 20px">
-  <button type="button" class="btn btn-primary" id="submit" onClick="getData()">Find Photos</button>
-</div>
+    <h3>Choose date (Earth):</h3>
+    <div class="input-group date" style="width: 250px;">
+      <input type="text" class="form-control" id="earth-date" data-date-format="yyyy-mm-dd">
+        <span class="input-group-addon">
+          <i class="glyphicon glyphicon-th"></i>
+        </span>
+    </div>
 
-<div class="alert alert-danger alert-dismissible" role="alert" style="width: 400px;">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <strong>Warning!</strong> Some requests may not be valid
-</div>
+    <div style="margin-top: 20px; margin-bottom: 20px">
+      <button type="button" class="btn btn-primary" id="submit" onClick="getData()">Find Photos</button>
+      &nbsp;<img id="loader" src="img/loader.gif">
+    </div>
 
-</div>
+    <div class="alert alert-danger alert-dismissible" role="alert" style="width: 400px;">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong>Warning!</strong> Some requests may not be valid
+    </div>
+    </div>
 
-<div class="container" id="results" style="margin-top: 30px;">
-  
-  <div class = "row">
-   
-   <div class = "col-sm-6 col-md-3">
-      <div class = "thumbnail">
-         <img src = "" alt = "placeholder image" id="rover-img">
+
+
+    <div class="col-xs-5">
+    <!--RESULTS-->
+    <div class="container" id="results" style="margin-top: 30px;">
+      <div class = "row">
+       <div class = "col-sm-6 col-md-3">
+          <div class = "thumbnail">
+             <img src="" alt="Mars Rover Image" id="rover-img">
+          </div>
+          <div class = "caption">
+             <h3 id="earth-date"></h3>
+             <p id="camera-type"></p>
+             <p id="sol"></p>
+             <p id="image-id"></p>
+             <p>
+                <a href = "#" class = "btn btn-primary" role = "button">
+                   Share <i class="fa fa-twitter"></i>
+                </a> 
+                
+                <a href = "#" class = "btn btn-default" role = "button">
+                   Enlarge
+                </a>
+             </p>
+          </div>
+       </div>
       </div>
-      
-      <div class = "caption">
-         <h3 id="earth-date"></h3>
-         <p id="camera-type"></p>
-         <p id="sol"></p>
-         <p id="image-id"></p>
-         
-         <p>
-            <a href = "#" class = "btn btn-primary" role = "button">
-               Share <i class="fa fa-twitter"></i>
-            </a> 
-            
-            <a href = "#" class = "btn btn-default" role = "button">
-               Enlarge
-            </a>
-         </p>
-         
-      </div>
-   </div>
-      
+    </div>
+    </div>
+
   </div>
 </div>
 
