@@ -5,6 +5,7 @@ $(document).ready(function() {
       orientation: "bottom auto"
   });
   $("#loader").hide();
+  $("#error").hide();
 });
 
 function getData() {
@@ -36,11 +37,18 @@ function getData() {
 			  document.getElementById('sol').innerHTML = "<b>SOL: </b>" + sol;
 			  document.getElementById('image-id').innerHTML = "<b>Image ID: </b>" + id;
 
+			  var full = document.getElementById('fullSize');
+			  full.href = img;
+
 			$('#results').css({ 
 				'visibility': 'visible'
 			});
 			$("#loader").hide();
-		});
+		})
+		.error(function() { 
+			$("#loader").hide(); 
+			$("#error").show();
+		})
 }
 
 
